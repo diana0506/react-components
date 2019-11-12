@@ -57,7 +57,7 @@ class App extends Component {
     this.setState({persons:persons});
   }
 
-  togglePersonalHandler=()=>{
+  togglePersonsHandler=()=>{
     const doesShow = this.state.showPersons;
     this.setState({showPersons:!doesShow});
   }
