@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 import './App.css';
 // import Radium,{StyleRoot} from 'radium';
 import Person from './Person/Person';
