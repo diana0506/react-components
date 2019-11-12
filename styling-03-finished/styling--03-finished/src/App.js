@@ -10,7 +10,7 @@ class App extends Component {
             { id: 'asdf11', name: 'Stephanie', age: 26 }
         ],
         otherState: 'some other value',
-        showPersons: false
+        showPersons: Boolean
     };
 
     nameChangedHandler = (event, id) => {
@@ -49,11 +49,9 @@ class App extends Component {
         let btnClass = '';
 
         if (this.state.showPersons) {
-            persons = ( <
-                div > {
+            persons = ( <div> {
                     this.state.persons.map((person, index) => {
-                        return ( <
-                            Person click = {
+                        return ( <Person click = {
                                 () => this.deletePersonHandler(index)
                             }
                             name = { person.name }
@@ -65,8 +63,7 @@ class App extends Component {
                             />
                         );
                     })
-                } <
-                /div>
+                } </div>
             );
 
             btnClass = classes.Red;
@@ -80,15 +77,14 @@ class App extends Component {
             assignedClasses.push(classes.bold); // classes = ['red', 'bold']
         }
 
-        return ( < div className = { classes.App } >
-            <
-            h1 > Hi, I 'm a React App</h1> <
-            p className = { assignedClasses.join(' ') } > This is really working! < /p>  <
-            button className = { btnClass }
+        return ( <div className = { classes.App } >
+            <h1 > Hi, I 'm a React App</h1>
+             <p className = { assignedClasses.join(' ') } > This is really working! </p> 
+              < button className = { btnClass }
             onClick = { this.togglePersonsHandler } >
-            Toggle Persons <
-            /button> { persons } < /
-            div >
+            Toggle Persons
+             </button> { persons }
+              </div>
         );
         // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
     }
